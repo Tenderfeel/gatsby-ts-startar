@@ -1,0 +1,6 @@
+node_modules/
+public/
+.cache/
+**/__generated__/
+appolo.config.js
+@types
