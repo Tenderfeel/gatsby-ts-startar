@@ -1,13 +1,21 @@
 const path = require(`path`)
+
 module.exports = {
   root: true,
+  // https://eslint.org/docs/user-guide/configuring/language-options#specifying-environments
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es2021: true,
+  },
+  // https://eslint.org/docs/user-guide/configuring/language-options#specifying-parser-options
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   plugins: ['react', 'graphql'],
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'prettier',
     'plugin:prettier/recommended',
