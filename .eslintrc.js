@@ -1,16 +1,21 @@
+const path = require(`path`)
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react', 'graphql'],
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  plugins: ['react', 'graphql'],
   extends: [
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
     'prettier',
     'plugin:prettier/recommended',
   ],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         tsconfigRootDir: __dirname,
         ecmaFeatures: {
@@ -18,8 +23,15 @@ module.exports = {
         },
         project: ['./tsconfig.json'],
       },
+      extends: ['plugin:@typescript-eslint/recommended'],
+      plugins: ['@typescript-eslint'],
     },
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     'graphql/template-strings': [
       'error',
