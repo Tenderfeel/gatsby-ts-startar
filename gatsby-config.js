@@ -1,10 +1,3 @@
-module.exports = {
-  plugins: [
-    {
-      resolve: 'gatsby-plugin-ts-config',
-      options: {
-        configDir: 'config',
-      },
-    },
-  ],
-}
+const { useGatsbyConfig } = require('gatsby-plugin-ts-config')
+
+module.exports = useGatsbyConfig(() => require('./config/gatsby-config'))

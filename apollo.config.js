@@ -9,7 +9,10 @@ module.exports = {
     ],
     service: {
       name: 'GatsbyJS',
-      localSchemaFile:  path.resolve(__dirname, 'src/__generated__/gatsby-schema.graphql'),
+      localSchemaFile: path.resolve(
+        __dirname,
+        'src/__generated__/gatsby-schema.graphql'
+      ),
     },
   },
 }
